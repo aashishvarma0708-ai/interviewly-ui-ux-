@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 8169)
-Total output lines: 1574
-
 /* ============================================================
    INTERVIEWLY LANDING PAGE STYLES
    Cinematic Titanium Aesthetic (Matching Reference Picture):
@@ -559,7 +556,436 @@ Total output lines: 1574
 }
 
 .macro-badge {
-  font-family: var(--fon…2169 tokens truncated…ox-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+}
+
+/* Macro 0: Signal Bars */
+.macro-signal-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.macro-signal-bar {
+  padding: 14px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.macro-signal-high {
+  width: 100%;
+  background: #FFFFFF;
+  color: #121418;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.macro-signal-mid {
+  width: 82%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.macro-signal-low {
+  width: 55%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Macro 1: Calendar Widget */
+.macro-calendar-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.macro-cal-slot {
+  padding: 13px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.macro-cal-slot.confirmed {
+  background: rgba(52, 211, 153, 0.15);
+  border: 1.5px solid rgba(52, 211, 153, 0.4);
+  color: #34D399;
+  font-weight: 700;
+}
+
+.macro-cal-slot.available {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Macro 2: Scorecard Grid */
+.macro-scorecard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.macro-score-item {
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.macro-score-item span {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.macro-score-item strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #FFFFFF;
+}
+
+/* Macro 3: Privacy Shield */
+.macro-privacy-shield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.macro-shield-icon {
+  font-size: 2.2rem;
+}
+
+.macro-privacy-shield strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #FFFFFF;
+}
+
+.macro-privacy-shield span {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sen-evidence-console-peek,
+.sen-evidence-knife-peek {
+  margin-top: var(--space-xs);
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+}
+
+/* ============================================================
+   3. SECTION 3: PRODUCT VARIANT SLIDER (ROLE STREAMS)
+   ============================================================ */
+.sen-variants {
+  padding: var(--space-5xl) 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.sen-variants-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  height: 780px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.7s var(--ease-sen);
+  filter: blur(75px);
+  opacity: 0.75;
+}
+
+.sen-variants-header {
+  margin-bottom: var(--space-3xl);
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.sen-variants-stage {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.sen-variants-console-col,
+.sen-variants-knife-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sen-variants-console-wrapper,
+.sen-variants-knife-wrapper {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Stream Preview Card (Symmetric Frosted Glass) */
+.sen-stream-preview-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-sen);
+}
+
+.sen-stream-preview-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-card-border-hover);
+}
+
+.sen-stream-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sen-stream-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.sen-stream-cat {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sen-stream-card-top h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.sen-stream-company {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sen-stream-match-badge {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.match-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.match-lbl {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sen-stream-desc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sen-stream-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sen-tag {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sen-stream-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 18px;
+}
+
+.sen-stream-meta-k {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.45);
+  display: block;
+}
+
+.sen-stream-meta-v {
+  font-size: 0.875rem;
+  color: #FFFFFF;
+}
+
+/* Right Swatches Card (Symmetric Frosted Glass) */
+.sen-swatches-card {
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sen-card-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.sen-variant-name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.sen-variant-desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Swatch Triggers */
+.sen-swatch-triggers-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.sen-swatch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-sen);
+  position: relative;
+}
+
+.sen-swatch-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.sen-swatch-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sen-swatch-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.sen-swatch-btn.is-active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sen-swatch-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  animation: swatchActiveRingPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes swatchActiveRingPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  70% {
+    transform: scale(1.04);
+    opacity: 1;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 
