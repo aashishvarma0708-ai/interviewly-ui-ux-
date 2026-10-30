@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 11715)
-Total output lines: 1002
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import InterviewConsoleVisual from '../components/InterviewConsoleVisual';
@@ -271,7 +268,483 @@ export default function Landing() {
                 data-cursor-label="EMPLOYER"
               >
                 <span>For Employers</span>
-                <span className="sen-toggle-sub">So…5715 tokens truncated…">
+                <span className="sen-toggle-sub">Source &amp; Interview</span>
+              </button>
+            </div>
+
+            <p className="sen-hero-description reveal-on-scroll reveal-delay-3">
+              Interviewly connects accomplished candidates with forward-thinking product teams.
+              Streamlining discovery, interview preparation, and structured evaluations in one
+              clean, minimalist interface.
+            </p>
+
+            {/* Telemetry Specs Grid */}
+            <div className="sen-hero-specs reveal-on-scroll reveal-delay-4">
+              <div className="sen-spec-item">
+                <span className="sen-spec-label">Match Signal</span>
+                <span className="sen-spec-val">98% Verified Index</span>
+              </div>
+              <div className="sen-spec-item">
+                <span className="sen-spec-label">Evaluations</span>
+                <span className="sen-spec-val">Structured Briefs</span>
+              </div>
+              <div className="sen-spec-item">
+                <span className="sen-spec-label">Scheduling</span>
+                <span className="sen-spec-val">Direct Calendar Sync</span>
+              </div>
+              <div className="sen-spec-item">
+                <span className="sen-spec-label">Privacy Shield</span>
+                <span className="sen-spec-val">100% Confidential</span>
+              </div>
+            </div>
+
+            {/* Call to Actions */}
+            <div className="sen-hero-actions reveal-on-scroll reveal-delay-5">
+              <Link to="/signup" className="sen-btn-primary" data-cursor-label="FIND JOB">
+                <span>Find a job</span>
+                <span className="sen-btn-arrow">→</span>
+              </Link>
+              <Link to="/signup" className="sen-btn-secondary" data-cursor-label="HIRE">
+                <span>Hire talent</span>
+              </Link>
+            </div>
+
+            {/* Trust Statement */}
+            <div className="sen-trust-statement reveal-on-scroll reveal-delay-5">
+              <span className="sen-trust-dot" />
+              <span>A clearer way to connect candidates and teams. No fabricated numbers, just meaningful conversations.</span>
+            </div>
+          </div>
+
+          {/* Right Column: Clean Interactive Interview Console Asset */}
+          <div className="sen-hero-visual-col">
+            <div
+              className="sen-hero-console-stage"
+              style={{
+                transform: prefersReducedMotion
+                  ? 'none'
+                  : `perspective(1200px) rotateX(${heroTilt.y}deg) rotateY(${heroTilt.x}deg) translate3d(${heroParallax.x * 0.3}px, ${heroParallax.y * 0.3}px, 0)`,
+              }}
+              data-cursor-label="DOSSIER"
+            >
+              <InterviewConsoleVisual
+                perspective={heroPerspective}
+                track={activeStreamId}
+                specularPos={specularPos}
+                onOpenModal={handleOpenDossier}
+              />
+            </div>
+
+            {/* Scroll Cue */}
+            <div className="sen-scroll-cue">
+              <span className="sen-scroll-line" />
+              <span className="sen-scroll-text">SCROLL TO DISCOVER METHODOLOGY</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 2: METHODOLOGY ("HOW IT WORKS")
+          Four-step flow from profile creation to offer
+          ======================================================== */}
+      <section id="how-it-works" className="sen-specifications">
+        <div className="container-wide">
+          <div className="sen-section-header-center reveal-on-scroll">
+            <span className="sen-section-label">METHODOLOGY</span>
+            <h2 className="sen-section-title">Four simple steps to your next milestone</h2>
+            <p className="sen-section-sub">
+              A transparent, repeatable framework designed to eliminate guesswork from discovery to offer.
+            </p>
+          </div>
+
+          <div className="sen-steps-grid reveal-on-scroll reveal-delay-1">
+            {[
+              {
+                num: '01',
+                title: 'Create a profile',
+                desc: 'Craft a structured candidate portfolio or company hiring requisition with role specifics, verified competencies, and expectations.',
+              },
+              {
+                num: '02',
+                title: 'Find a suitable match',
+                desc: 'Our criteria-driven platform highlights top-tier compatibility with zero resume spam, ensuring high-conversion conversations.',
+              },
+              {
+                num: '03',
+                title: 'Schedule an interview',
+                desc: 'Direct calendar integration syncs interview slots effortlessly across Google Calendar and Outlook with zero administrative delay.',
+              },
+              {
+                num: '04',
+                title: 'Move forward with confidence',
+                desc: 'Access structured evaluation scorecards, objective feedback rubrics, and formal offers in one unified workspace.',
+              },
+            ].map((step) => (
+              <div key={step.num} className="sen-step-column-card" data-cursor-label={`STEP ${step.num}`}>
+                <div className="sen-step-num-badge">[{step.num}]</div>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 3: DEEP SCROLL / "EVIDENCE"
+          A narrative block where smooth vertical scrolling slowly
+          transitions into multi-column detail layers showing
+          micro-attributes ([01] through [04] layout grids).
+          ======================================================== */}
+      <section id="evidence" className="sen-evidence">
+        <div className="container-wide">
+          {/* Section Header */}
+          <div className="sen-evidence-header reveal-on-scroll">
+            <span className="sen-section-label">THE ARCHITECTURE OF HIGH-CONVERSION HIRING</span>
+            <h2 className="sen-section-title">Evidence of a clearer recruitment framework</h2>
+            <p className="sen-section-sub">
+              Every stage of Interviewly is engineered to eliminate resume noise, scheduling delays,
+              and evaluation ambiguity. Four foundational platform pillars.
+            </p>
+          </div>
+
+          {/* Stepper Indicator Navigation */}
+          <div className="sen-evidence-nav reveal-on-scroll reveal-delay-1" data-cursor-label="SELECT">
+            {EVIDENCE_ITEMS.map((item, idx) => (
+              <button
+                key={item.num}
+                type="button"
+                className={`sen-evidence-nav-btn ${idx === evidenceStep ? 'is-active' : ''}`}
+                onClick={() => setEvidenceStep(idx)}
+                data-cursor-label={`STEP ${item.num}`}
+              >
+                <span className="sen-nav-num">[{item.num}]</span>
+                <span className="sen-nav-title">{item.title.split(' ')[0]} {item.title.split(' ')[1]}</span>
+                <span className="sen-nav-line" />
+              </button>
+            ))}
+          </div>
+
+          {/* Deep Scroll Multi-Column Attribute Stage */}
+          <div className="sen-evidence-stage">
+            {/* Left: Narrative Detail Block */}
+            <div className="sen-evidence-narrative reveal-on-scroll reveal-delay-2">
+              <div className="sen-evidence-tag">EVIDENCE PILLAR [{activeEvidence.num} OF 04]</div>
+              <h3 className="sen-evidence-title">{activeEvidence.title}</h3>
+              <p className="sen-evidence-sub">{activeEvidence.subtitle}</p>
+              <p className="sen-evidence-body">{activeEvidence.body}</p>
+
+              {/* Technical Specifications Sub-Grid */}
+              <div className="sen-evidence-specs-grid">
+                {activeEvidence.specs.map((s) => (
+                  <div key={s.label} className="sen-spec-card">
+                    <span className="sen-spec-card-label">{s.label}</span>
+                    <span className="sen-spec-card-val">{s.val}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Stepper Pagination Controls */}
+              <div className="sen-evidence-controls">
+                <button
+                  type="button"
+                  className="sen-step-btn"
+                  disabled={evidenceStep === 0}
+                  onClick={() => setEvidenceStep((p) => Math.max(0, p - 1))}
+                  data-cursor-label="PREV"
+                >
+                  ← Previous [0{evidenceStep}]
+                </button>
+                <button
+                  type="button"
+                  className="sen-step-btn"
+                  disabled={evidenceStep === EVIDENCE_ITEMS.length - 1}
+                  onClick={() => setEvidenceStep((p) => Math.min(EVIDENCE_ITEMS.length - 1, p + 1))}
+                  data-cursor-label="NEXT"
+                >
+                  Next [0{evidenceStep + 2}] →
+                </button>
+              </div>
+            </div>
+
+            {/* Right: Interactive Feature Inspection Layer */}
+            <div className="sen-evidence-visual-col reveal-on-scroll reveal-delay-3">
+              <div className="sen-evidence-macro-card" data-cursor-label="INSPECT">
+                {/* Visual Representation based on active step */}
+                {evidenceStep === 0 && (
+                  <div className="macro-view macro-view--signal">
+                    <div className="macro-signal-bars">
+                      <div className="macro-signal-bar macro-signal-high">
+                        <span>Interviewly Verified Match: 98% Compatibility</span>
+                      </div>
+                      <div className="macro-signal-bar macro-signal-mid">
+                        <span>Role Criteria Overlap: 94% Skills Match</span>
+                      </div>
+                      <div className="macro-signal-bar macro-signal-low">
+                        <span>Unfiltered Public Job Board Spam: 12% Signal</span>
+                      </div>
+                    </div>
+                    <div className="macro-badge">SIGNAL-TO-NOISE FILTERING</div>
+                  </div>
+                )}
+
+                {evidenceStep === 1 && (
+                  <div className="macro-view macro-view--calendar">
+                    <div className="macro-calendar-widget">
+                      <div className="macro-cal-slot confirmed">
+                        <span>✓ Today, 2:30 PM EST · System Architecture Review</span>
+                      </div>
+                      <div className="macro-cal-slot available">
+                        <span>Tomorrow, 10:00 AM EST · Technical Deep Dive</span>
+                      </div>
+                      <div className="macro-cal-slot available">
+                        <span>Thursday, 3:00 PM EST · Executive Alignment</span>
+                      </div>
+                    </div>
+                    <div className="macro-badge">DIRECT MULTI-CALENDAR SYNC</div>
+                  </div>
+                )}
+
+                {evidenceStep === 2 && (
+                  <div className="macro-view macro-view--scorecard">
+                    <div className="macro-scorecard-grid">
+                      <div className="macro-score-item">
+                        <span>System Architecture</span>
+                        <strong>4.9 / 5.0</strong>
+                      </div>
+                      <div className="macro-score-item">
+                        <span>Technical Depth</span>
+                        <strong>4.8 / 5.0</strong>
+                      </div>
+                      <div className="macro-score-item">
+                        <span>Collaboration</span>
+                        <strong>5.0 / 5.0</strong>
+                      </div>
+                      <div className="macro-score-item">
+                        <span>Leadership Sense</span>
+                        <strong>4.7 / 5.0</strong>
+                      </div>
+                    </div>
+                    <div className="macro-badge">4-DIMENSION OBJECTIVE SCORECARD</div>
+                  </div>
+                )}
+
+                {evidenceStep === 3 && (
+                  <div className="macro-view macro-view--privacy">
+                    <div className="macro-privacy-shield">
+                      <div className="macro-shield-icon">🔒</div>
+                      <strong>Private Candidate Shield</strong>
+                      <span>Zero Public Profile Leaks · Confidential Search</span>
+                    </div>
+                    <div className="macro-badge">END-TO-END CONFIDENTIALITY</div>
+                  </div>
+                )}
+
+                <div className="sen-evidence-console-peek">
+                  <span className="sen-mono">EVALUATION-SPEC-V2 · VERIFIED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 3: PRODUCT VARIANT SLIDER (CURATED ROLE STREAMS)
+          Custom variant block featuring color-swatch triggers
+          ("orange", "green", "white", "dark brown").
+          Clicking or hovering a swatch fluidly transitions both the
+          foreground dossier and its background gradient glow.
+          ======================================================== */}
+      <section id="variants" className="sen-variants">
+        {/* Dynamic Background Gradient Glow transitioning on swatch select */}
+        <div
+          className="sen-variants-bg-glow"
+          style={{ background: activeStream.glow }}
+        />
+
+        <div className="container-wide">
+          {/* Section Header */}
+          <div className="sen-variants-header reveal-on-scroll">
+            <span className="sen-section-label">CURATED ROLE STREAMS</span>
+            <h2 className="sen-section-title">Select your specialized engineering stream</h2>
+            <p className="sen-section-sub">
+              Explore active candidate dossiers, evaluation scorecards, and upcoming interview slots across four signature disciplines.
+            </p>
+          </div>
+
+          <div className="sen-variants-stage">
+            {/* Left: Large Candidate Dossier Display with Smooth Transition */}
+            <div className="sen-variants-console-col reveal-on-scroll reveal-delay-1">
+              <div
+                className="sen-variants-console-wrapper"
+                data-cursor-label={activeStream.name.toUpperCase()}
+              >
+                <div className="sen-stream-preview-card" onClick={() => handleOpenDossier(activeStream)}>
+                  <div className="sen-stream-card-top">
+                    <div className="sen-stream-avatar" style={{ backgroundColor: activeStream.colorHex }}>
+                      {activeStream.avatar}
+                    </div>
+                    <div>
+                      <span className="sen-stream-cat" style={{ color: activeStream.colorHex }}>
+                        {activeStream.name}
+                      </span>
+                      <h4>{activeStream.roleTitle}</h4>
+                      <p className="sen-stream-company">{activeStream.company}</p>
+                    </div>
+                    <div className="sen-stream-match-badge">
+                      <span className="match-num">{activeStream.matchScore}</span>
+                      <span className="match-lbl">MATCH</span>
+                    </div>
+                  </div>
+
+                  <p className="sen-stream-desc">{activeStream.description}</p>
+
+                  <div className="sen-stream-tags">
+                    {activeStream.tags.map((tag) => (
+                      <span key={tag} className="sen-tag">{tag}</span>
+                    ))}
+                  </div>
+
+                  <div className="sen-stream-footer">
+                    <div>
+                      <span className="sen-stream-meta-k">NEXT ROUND</span>
+                      <strong className="sen-stream-meta-v">{activeStream.date}</strong>
+                    </div>
+                    <button
+                      type="button"
+                      className="sen-btn-primary"
+                      style={{ padding: '8px 20px', fontSize: '0.75rem' }}
+                      data-cursor-label="INSPECT"
+                    >
+                      Inspect Dossier
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Color-Swatch Triggers & Stream Metadata */}
+            <div className="sen-variants-controls-col reveal-on-scroll reveal-delay-2">
+              <div className="sen-swatches-card">
+                <span className="sen-card-eyebrow">DISCIPLINE SWATCHES</span>
+                <h3 className="sen-variant-name">{activeStream.name}</h3>
+                <p className="sen-variant-desc">{activeStream.description}</p>
+
+                {/* THE FOUR SWATCH TRIGGERS */}
+                <div className="sen-swatch-triggers-row" data-cursor-label="SWATCH">
+                  {ROLE_STREAMS.map((swatch) => (
+                    <button
+                      key={swatch.id}
+                      type="button"
+                      data-swatch-id={swatch.id}
+                      className={`sen-swatch-btn ${swatch.id === activeStreamId ? 'is-active' : ''}`}
+                      onClick={() => setActiveStreamId(swatch.id)}
+                      onMouseEnter={() => setActiveStreamId(swatch.id)}
+                      aria-label={`Select ${swatch.name}`}
+                      data-cursor-label={swatch.id.toUpperCase()}
+                    >
+                      <span
+                        className="sen-swatch-circle"
+                        style={{ backgroundColor: swatch.colorHex }}
+                      />
+                      <span className="sen-swatch-label">{swatch.id}</span>
+                      {swatch.id === activeStreamId && <span className="sen-swatch-ring" />}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="sen-hairline" />
+
+                {/* Stream Detail Metadata */}
+                <div className="sen-variant-meta-list">
+                  <div className="sen-variant-meta-row">
+                    <span className="sen-meta-k">Candidate Profile</span>
+                    <span className="sen-meta-v">{activeStream.candidate} ({activeStream.roleTitle})</span>
+                  </div>
+                  <div className="sen-variant-meta-row">
+                    <span className="sen-meta-k">Pipeline Stage</span>
+                    <span className="sen-meta-v">{activeStream.pipelineStatus}</span>
+                  </div>
+                  <div className="sen-variant-meta-row">
+                    <span className="sen-meta-k">Verified Compensation</span>
+                    <span className="sen-meta-v sen-mono">{activeStream.salaryRange}</span>
+                  </div>
+                  <div className="sen-variant-meta-row">
+                    <span className="sen-meta-k">Status</span>
+                    <span className="sen-meta-v sen-stock-status">
+                      <span className="sen-stock-dot" />
+                      Active Hiring Pipeline
+                    </span>
+                  </div>
+                </div>
+
+                {/* Reserve / Inquire Action */}
+                <div className="sen-variant-cta-wrap">
+                  <button
+                    type="button"
+                    className="sen-btn-primary sen-btn-primary--full"
+                    onClick={() => handleOpenDossier(activeStream)}
+                    data-cursor-label="SCHEDULE"
+                  >
+                    <span>Schedule Interview with Candidate</span>
+                    <span className="sen-btn-arrow">→</span>
+                  </button>
+                  <span className="sen-variant-guarantee">
+                    Confidential evaluation brief, objective rubrics, and direct calendar synchronization included.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 4: AUDIENCE PATHWAYS (CANDIDATES & EMPLOYERS)
+          Two Symmetric Frosted Glass Cards
+          ======================================================== */}
+      <section id="audiences" className="sen-audiences-section">
+        <div className="container-wide">
+          <div className="sen-section-header-center reveal-on-scroll">
+            <span className="sen-section-label">AUDIENCE PATHWAYS</span>
+            <h2 className="sen-section-title">Built for both sides of the hiring table</h2>
+            <p className="sen-section-sub">
+              Dedicated interfaces and calibrated workflows for senior engineers and modern engineering leadership.
+            </p>
+          </div>
+
+          <div className="sen-audiences-grid">
+            {/* For Candidates Card */}
+            <div className="sen-audience-card reveal-on-scroll" data-cursor-label="CANDIDATE">
+              <div className="sen-audience-card-header">
+                <span className="sen-badge">FOR CANDIDATES</span>
+                <span className="sen-audience-tagline">Discover · Prepare · Track</span>
+              </div>
+              <h3 className="sen-audience-title">Take control of your engineering career</h3>
+              <p className="sen-audience-lead">
+                Discover curated opportunities matched directly to your verified technical strengths.
+                Receive comprehensive interview briefs before every call, transparent feedback,
+                and direct visibility into team architectures.
+              </p>
+
+              <div className="sen-audience-features">
+                <div className="sen-feature-item">
+                  <span className="sen-feature-dot" />
+                  <span>Curated high-signal roles matching verified competencies and compensation</span>
+                </div>
+                <div className="sen-feature-item">
+                  <span className="sen-feature-dot" />
+                  <span>Confidential candidate shield: zero exposure to current employers</span>
+                </div>
+                <div className="sen-feature-item">
+                  <span className="sen-feature-dot" />
+                  <span>Integrated calendar slots with interview dossiers and technical scopes</span>
+                </div>
+              </div>
+
+              <div className="sen-quote-block">
                 <blockquote>
                   &ldquo;Interviewly eliminated endless recruiter spam. Every conversation was pre-vetted,
                   the interview brief was thorough, and the calendar coordination took seconds.&rdquo;
