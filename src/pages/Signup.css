@@ -1,0 +1,361 @@
+/* ============================================================
+   Interviewly Signup Styles
+   Cinematic Titanium Aesthetic (Matching Reference Picture)
+   ============================================================ */
+
+.sen-auth-page {
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 50px);
+  padding-bottom: var(--space-4xl);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sen-auth-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.sen-auth-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 560px;
+}
+
+.sen-auth-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+}
+
+.sen-auth-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sen-auth-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: var(--space-xs) 0;
+}
+
+.sen-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sen-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.sen-auth-coords {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  margin-top: var(--space-sm);
+}
+
+/* Right Card (Liquid Glass Frosted Dark Titanium Container) */
+.sen-auth-card {
+  padding: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+}
+
+.sen-auth-card-header {
+  margin-bottom: var(--space-md);
+}
+
+.sen-auth-card-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.sen-auth-card-header p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 4px;
+}
+
+.sen-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sen-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sen-form-group label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sen-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sen-choice-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.sen-choice-card {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-sen);
+  user-select: none;
+  color: #FFFFFF;
+}
+
+.sen-choice-card strong {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: #FFFFFF;
+}
+
+.sen-choice-card span {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 3px;
+}
+
+.sen-choice-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.sen-choice-card.is-active {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.sen-choice-card.is-active strong {
+  color: #FFFFFF;
+}
+
+.sen-choice-card.is-active span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Liquid-Glass Inputs */
+.sen-form-input {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  outline: none;
+  transition: all 0.2s var(--ease-sen);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sen-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.sen-form-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.sen-form-input.has-error {
+  border-color: #F87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.sen-select-wrap {
+  position: relative;
+}
+
+.sen-form-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 44px;
+}
+
+.sen-form-select option {
+  background: #1C1F25;
+  color: #FFFFFF;
+}
+
+.sen-input-wrap {
+  position: relative;
+}
+
+.sen-password-toggle-btn {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sen-password-toggle-btn:hover {
+  color: #FFFFFF;
+}
+
+.sen-field-error {
+  font-size: 0.75rem;
+  color: #F87171;
+  margin-top: 4px;
+}
+
+/* Submit Button (Pure White Pill Button Matching Reference Image) */
+.sen-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #121418;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-sen);
+  margin-top: 6px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.sen-submit-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+}
+
+.sen-consent-note {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+.sen-auth-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 6px;
+}
+
+.sen-auth-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.sen-auth-link:hover {
+  opacity: 0.85;
+}
+
+.sen-auth-success {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sen-auth-success h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.sen-auth-success p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 380px;
+}
+
+.sen-success-actions {
+  margin-top: var(--space-md);
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .sen-auth-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .sen-choice-group {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,162 @@
+/* ============================================================
+   Interviewly Minimalist Luxury Footer Styles
+   Cinematic Titanium / Charcoal Palette
+   ============================================================ */
+
+.sen-footer {
+  background: rgba(18, 20, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--text-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-4xl) 0 var(--space-2xl);
+  position: relative;
+  z-index: 10;
+}
+
+.sen-footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sen-footer-col--brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sen-footer-brand {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.sen-footer-tagline {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 360px;
+}
+
+.sen-footer-coords {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+}
+
+.sen-footer-heading {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.sen-footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sen-footer-list a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.sen-footer-list a:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+.sen-footer-newsletter-text {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: var(--space-md);
+}
+
+.sen-footer-reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #121418;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-sen);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sen-footer-reserve-btn:hover {
+  background: rgba(255, 255, 255, 0.88);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+/* Bottom Bar */
+.sen-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-lg);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.sen-footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sen-footer-sep {
+  opacity: 0.4;
+}
+
+@media (max-width: 1080px) {
+  .sen-footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 680px) {
+  .sen-footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .sen-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

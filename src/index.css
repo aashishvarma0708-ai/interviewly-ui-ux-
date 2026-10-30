@@ -1,0 +1,605 @@
+/* ============================================================
+   INTERVIEWLY DESIGN SYSTEM
+   Cinematic Titanium / Charcoal-Slate Aesthetic
+   (Exact match to Sen Knife Dark Titanium reference image):
+   - Background: Deep metallic graphite gradient with continuous diagonal ambient silver light beam
+   - Headlines: Crisp brilliant pure white (#FFFFFF)
+   - Secondary text: Soft silver-grey (rgba(255, 255, 255, 0.85))
+   - Muted text: Luminous mist (rgba(255, 255, 255, 0.65))
+   - Buttons: Pure white pill buttons with dark typography (#121418)
+   - Secondary buttons: Liquid-glass frosted pill buttons
+   - Hairlines: Subtle translucent silver dividers (rgba(255, 255, 255, 0.12))
+   - Cards: Symmetric frosted charcoal glass with specular rim reflections
+   ============================================================ */
+
+:root {
+  /* Cinematic Graphite / Titanium Slate Palette */
+  --bg-dark-base: #14161A;
+  --bg-dark-mid: #252830;
+  --bg-dark-light: #373C46;
+  --bg-dark-highlight: #4E5562;
+  --bg-primary: #1C1F25;
+  --bg-secondary: #17191E;
+  --bg-subtle: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(30, 34, 44, 0.75);
+  --bg-card-hover: rgba(38, 44, 56, 0.88);
+  --bg-glass: rgba(255, 255, 255, 0.08);
+
+  /* Diagonal Light Beam Gradient (Continuous & Cursor-Reactive Across Entire Site) */
+  --bg-cinematic-beam: 
+    radial-gradient(circle 900px at var(--global-mouse-x, 45%) var(--global-mouse-y, 40%), rgba(255, 255, 255, 0.26) 0%, rgba(130, 142, 160, 0.16) 42%, transparent 75%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.06) 38%, transparent 68%),
+    linear-gradient(160deg, #2D323A 0%, #3E444F 30%, #525966 50%, #2A2E36 78%, #14161A 100%);
+
+  /* High-Contrast Crisp Pure White & Silver Typography */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-caption: rgba(255, 255, 255, 0.45);
+  --text-faint: rgba(255, 255, 255, 0.25);
+  --text-dark: #121418;
+
+  /* Editorial Translucent Hairlines & Specular Borders */
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-medium: rgba(255, 255, 255, 0.22);
+  --border-strong: rgba(255, 255, 255, 0.45);
+  --border-white: rgba(255, 255, 255, 0.95);
+
+  /* Unified Symmetric Glass Card Tokens */
+  --glass-card-bg: rgba(30, 34, 44, 0.72);
+  --glass-card-bg-hover: rgba(38, 44, 56, 0.85);
+  --glass-card-border: rgba(255, 255, 255, 0.15);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.32);
+  --glass-card-shadow: 
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.28),
+    inset 0 -1px 1.5px rgba(0, 0, 0, 0.45),
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+
+  /* Accent Steel, Silver & Glow */
+  --color-silver: #D8DCE2;
+  --color-steel: #8C94A0;
+  --color-accent-amber: #E85D26;
+  --color-accent-emerald: #34D399;
+  --color-accent-blue: #60A5FA;
+
+  /* Stream Variations */
+  --swatch-orange: #E85D26;
+  --swatch-orange-glow: radial-gradient(circle 600px at 50% 50%, rgba(232, 93, 38, 0.24) 0%, rgba(232, 93, 38, 0.05) 50%, transparent 75%);
+
+  --swatch-green: #2F5E44;
+  --swatch-green-glow: radial-gradient(circle 600px at 50% 50%, rgba(52, 211, 153, 0.2) 0%, rgba(47, 94, 68, 0.05) 50%, transparent 75%);
+
+  --swatch-white: #E8E5DF;
+  --swatch-white-glow: radial-gradient(circle 600px at 50% 50%, rgba(255, 255, 255, 0.26) 0%, rgba(210, 215, 222, 0.06) 50%, transparent 75%);
+
+  --swatch-brown: #382319;
+  --swatch-brown-glow: radial-gradient(circle 600px at 50% 50%, rgba(180, 110, 70, 0.22) 0%, rgba(56, 35, 25, 0.05) 50%, transparent 75%);
+
+  /* Typography */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Spacing */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+  --space-5xl: 180px;
+
+  /* Layout */
+  --max-width: 1440px;
+  --header-height: 80px;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Motion & Easing Tokens */
+  --ease-sen: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-gentle: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-fast: 0.2s var(--ease-snappy);
+  --transition-base: 0.4s var(--ease-sen);
+  --transition-slow: 0.75s var(--ease-sen);
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background-color: var(--bg-dark-base);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Permanent Fixed Cinematic Titanium Beam Background */
+.sen-fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--bg-cinematic-beam);
+  background-color: var(--bg-dark-base);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+img, svg {
+  display: block;
+}
+
+/* Containers with Symmetric Whitespace */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5vw, 64px);
+  padding-right: clamp(20px, 5vw, 64px);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5vw, 72px);
+  padding-right: clamp(20px, 5vw, 72px);
+}
+
+/* Section Header Styles (Symmetric across every section) */
+.sen-section-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-sm);
+}
+
+.sen-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.sen-section-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 720px;
+  margin-top: var(--space-sm);
+}
+
+.sen-section-header-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.sen-section-header-center .sen-section-label {
+  justify-content: center;
+}
+
+.sen-section-header-center .sen-section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   GLOBAL BUTTON SYSTEM (Symmetric Reference Theme)
+   ============================================================ */
+
+/* Primary Pill Button (Exact to Reference Picture "Contact" & "$ 250 - 350 | BUY") */
+.sen-btn-primary,
+.sen-btn-inquire,
+.sen-submit-btn,
+.sen-footer-reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF !important;
+  color: #121418 !important;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s var(--ease-sen);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sen-btn-primary:hover,
+.sen-btn-inquire:hover,
+.sen-submit-btn:hover,
+.sen-footer-reserve-btn:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(255, 255, 255, 0.25);
+}
+
+/* Secondary Liquid-Glass Pill Button */
+.sen-btn-secondary,
+.sen-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.25s var(--ease-sen);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sen-btn-secondary:hover,
+.sen-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sen-btn-arrow {
+  transition: transform 0.25s var(--ease-sen);
+  font-weight: 800;
+}
+
+.sen-btn-primary:hover .sen-btn-arrow,
+.sen-btn-secondary:hover .sen-btn-arrow,
+.sen-btn-inquire:hover .sen-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   MOTION & REVEAL SYSTEM
+   ============================================================ */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-sen),
+              transform 0.6s var(--ease-sen);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed,
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger Delays */
+.reveal-delay-1 { transition-delay: 0.06s; }
+.reveal-delay-2 { transition-delay: 0.12s; }
+.reveal-delay-3 { transition-delay: 0.18s; }
+.reveal-delay-4 { transition-delay: 0.24s; }
+.reveal-delay-5 { transition-delay: 0.3s; }
+
+/* Hairline dividers */
+.sen-hairline {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 30%, rgba(255, 255, 255, 0.15) 70%, transparent);
+  margin: var(--space-xl) 0;
+}
+
+/* Pill Badges */
+.sen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.sen-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.sen-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   UNIVERSAL CARD SPECULAR LIGHTING (Tracks Cursor in Real Time)
+   ============================================================ */
+.sen-audience-card,
+.sen-step-column-card,
+.sen-benefit-col,
+.sen-stream-preview-card,
+.sen-swatches-card,
+.sen-evidence-narrative,
+.sen-evidence-macro-card,
+.sen-closing-inner,
+.sen-auth-card,
+.sen-modal-card {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.sen-audience-card::before,
+.sen-step-column-card::before,
+.sen-benefit-col::before,
+.sen-stream-preview-card::before,
+.sen-swatches-card::before,
+.sen-evidence-narrative::before,
+.sen-evidence-macro-card::before,
+.sen-closing-inner::before,
+.sen-auth-card::before,
+.sen-modal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    550px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.sen-audience-card:hover::before,
+.sen-step-column-card:hover::before,
+.sen-benefit-col:hover::before,
+.sen-stream-preview-card:hover::before,
+.sen-swatches-card:hover::before,
+.sen-evidence-narrative:hover::before,
+.sen-evidence-macro-card:hover::before,
+.sen-closing-inner:hover::before,
+.sen-auth-card:hover::before,
+.sen-modal-card:hover::before {
+  opacity: 1;
+}
+
+/* Ensure contents are layered cleanly above the specular layer */
+.sen-audience-card > *,
+.sen-step-column-card > *,
+.sen-benefit-col > *,
+.sen-stream-preview-card > *,
+.sen-swatches-card > *,
+.sen-evidence-narrative > *,
+.sen-evidence-macro-card > *,
+.sen-closing-inner > *,
+.sen-auth-card > *,
+.sen-modal-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   UNIVERSAL BUTTON LIQUID REFLECTION SWEEP
+   ============================================================ */
+.sen-btn-primary,
+.sen-btn-secondary,
+.sen-btn-inquire,
+.sen-submit-btn,
+.sen-footer-reserve-btn,
+.sen-console-action-btn,
+.sen-step-btn {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.sen-btn-primary::after,
+.sen-btn-secondary::after,
+.sen-btn-inquire::after,
+.sen-submit-btn::after,
+.sen-footer-reserve-btn::after,
+.sen-console-action-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 65%
+  );
+  transform: rotate(25deg) translateY(-120%);
+  transition: transform 0.65s var(--ease-sen);
+  pointer-events: none;
+}
+
+.sen-btn-primary:hover::after,
+.sen-btn-secondary:hover::after,
+.sen-btn-inquire:hover::after,
+.sen-submit-btn:hover::after,
+.sen-footer-reserve-btn:hover::after,
+.sen-console-action-btn:hover::after {
+  transform: rotate(25deg) translateY(120%);
+}
+
+/* ============================================================
+   KINETIC TYPOGRAPHY SPECULAR SHEEN (Tracks Cursor on Headlines)
+   ============================================================ */
+.sen-hero-headline,
+.sen-section-title,
+.sen-evidence-title,
+.sen-audience-title,
+.sen-closing-headline,
+.sen-login-title,
+.sen-signup-title {
+  background-image: radial-gradient(
+    450px circle at var(--text-mouse-x, 50%) var(--text-mouse-y, 50%),
+    #FFFFFF 25%,
+    rgba(255, 255, 255, 0.92) 55%,
+    rgba(215, 225, 240, 0.8) 85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: filter 0.3s ease;
+}
+
+.sen-hero-headline:hover,
+.sen-section-title:hover,
+.sen-evidence-title:hover,
+.sen-audience-title:hover {
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.25));
+}
+
+/* ============================================================
+   INTERACTIVE TEXT & SPEC MICRO-ANIMATIONS
+   ============================================================ */
+.sen-spec-item,
+.sen-spec-card,
+.sen-feature-item,
+.sen-skill-chip {
+  transition: transform 0.25s var(--ease-sen), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sen-spec-item:hover,
+.sen-spec-card:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sen-feature-item:hover {
+  transform: translateX(4px);
+  color: #FFFFFF;
+}
+
+.sen-feature-item:hover .sen-feature-dot {
+  background: #FFFFFF;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  transform: scale(1.3);
+}
+
+.sen-skill-chip:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.sen-hero-description,
+.sen-section-sub,
+.sen-evidence-sub,
+.sen-evidence-body,
+.sen-audience-lead {
+  transition: color 0.3s ease;
+}
+
+.sen-hero-description:hover,
+.sen-section-sub:hover,
+.sen-audience-lead:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

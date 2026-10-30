@@ -1,0 +1,238 @@
+/* ============================================================
+   Interviewly Minimalist Luxury Header Styles
+   Cinematic Titanium Aesthetic (Matching Reference Picture)
+   ============================================================ */
+
+.sen-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 1000;
+  background: rgba(28, 31, 37, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  transition: all 0.35s var(--ease-sen);
+}
+
+.sen-header--scrolled {
+  background: rgba(20, 22, 26, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sen-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Brandmark */
+.sen-brandmark {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  z-index: 1100;
+}
+
+.sen-brandmark-main {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  text-transform: lowercase;
+}
+
+.sen-brandmark-sub {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+/* Desktop Navigation */
+.sen-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.sen-nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.sen-nav-link {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.sen-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #FFFFFF;
+  transition: width 0.3s var(--ease-sen);
+}
+
+.sen-nav-link:hover {
+  color: #FFFFFF;
+}
+
+.sen-nav-link:hover::after {
+  width: 100%;
+}
+
+.sen-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sen-nav-link--login {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Pure White Pill Button (Exact to Reference Picture "Contact" & "$ 250 - 350 | BUY") */
+.sen-btn-inquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  color: #121418;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-sen);
+  border: 1px solid #FFFFFF;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sen-btn-inquire:hover {
+  background: rgba(255, 255, 255, 0.88);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+.sen-btn-arrow {
+  transition: transform 0.25s var(--ease-sen);
+}
+
+.sen-btn-inquire:hover .sen-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Mobile Hamburger Toggle */
+.sen-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+.sen-hamburger-bar {
+  width: 24px;
+  height: 1.5px;
+  background: #FFFFFF;
+  transition: all 0.3s var(--ease-sen);
+}
+
+.sen-hamburger--open .sen-hamburger-bar:nth-child(1) {
+  transform: translateY(3.75px) rotate(45deg);
+}
+
+.sen-hamburger--open .sen-hamburger-bar:nth-child(2) {
+  transform: translateY(-3.75px) rotate(-45deg);
+}
+
+/* Responsive Mobile Navigation Drawer */
+@media (max-width: 960px) {
+  .sen-hamburger {
+    display: flex;
+  }
+
+  .sen-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: #181A1F;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 36px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.45s var(--ease-sen);
+    z-index: 1050;
+  }
+
+  .sen-nav--open {
+    transform: translateX(0);
+  }
+
+  .sen-nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .sen-nav-link {
+    font-size: 1rem;
+    color: #FFFFFF;
+  }
+
+  .sen-nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: var(--space-lg);
+    width: 100%;
+  }
+
+  .sen-btn-inquire {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sen-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1040;
+    backdrop-filter: blur(4px);
+  }
+}

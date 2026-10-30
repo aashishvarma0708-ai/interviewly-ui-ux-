@@ -1,0 +1,218 @@
+/* ===== Button Component =====
+   Matches the liquid-glass buttons in Reference 2 with
+   Spyker-inspired cinematic tactile motion and specular highlights
+*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              background var(--transition-base),
+              border-color var(--transition-base);
+  white-space: nowrap;
+  position: relative;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizing */
+.btn--sm {
+  padding: 8px 22px;
+  font-size: 0.8125rem;
+}
+
+.btn--md {
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+}
+
+.btn--lg {
+  padding: 15px 36px;
+  font-size: 1.05rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Specular Light Gleam Sweep on Hover (Automotive/Supercar Inspiration) */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-24deg);
+  transition: left 0.75s var(--ease-cinematic);
+  pointer-events: none;
+}
+
+.btn:hover:not(:disabled)::before {
+  left: 170%;
+}
+
+/* -------------------------------------------------------------
+   1. PRIMARY: "Continue" style from Reference 2
+   Liquid periwinkle-blue translucent glass pill with 3D edge
+   ------------------------------------------------------------- */
+.btn--primary {
+  background: var(--glass-blue-bg);
+  color: var(--color-navy);
+  border: 1.5px solid var(--glass-blue-border);
+  box-shadow: var(--glass-blue-shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--glass-blue-bg-hover);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -2px 3px rgba(45, 90, 150, 0.45),
+    0 14px 30px -2px rgba(70, 135, 210, 0.65),
+    0 4px 10px rgba(14, 26, 44, 0.12);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 
+    inset 0 2px 3px rgba(45, 90, 150, 0.45),
+    0 4px 12px rgba(70, 135, 210, 0.45);
+  transition-duration: 70ms;
+}
+
+/* -------------------------------------------------------------
+   2. SECONDARY: "Cancel" style from Reference 2
+   Frosted milky white liquid glass pill with specular rim
+   ------------------------------------------------------------- */
+.btn--secondary {
+  background: var(--glass-white-bg);
+  color: var(--color-navy);
+  border: 1.5px solid var(--glass-white-border);
+  box-shadow: var(--glass-white-shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--glass-white-bg-hover);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(160, 185, 215, 0.3),
+    0 12px 28px rgba(14, 26, 44, 0.14),
+    0 3px 8px rgba(14, 26, 44, 0.06);
+}
+
+.btn--secondary:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 
+    inset 0 2px 2px rgba(0, 0, 0, 0.08),
+    0 3px 8px rgba(14, 26, 44, 0.08);
+  transition-duration: 70ms;
+}
+
+/* -------------------------------------------------------------
+   3. NAVY: Kyoto ink solid button
+   ------------------------------------------------------------- */
+.btn--navy {
+  background: var(--color-navy);
+  color: var(--color-parchment-sand);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(14, 26, 44, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn--navy:hover:not(:disabled) {
+  background: var(--color-navy-light);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 28px rgba(14, 26, 44, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn--navy:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  transition-duration: 70ms;
+}
+
+/* -------------------------------------------------------------
+   4. TERRACOTTA: Warm cinnabar accent
+   ------------------------------------------------------------- */
+.btn--terracotta {
+  background: var(--color-terracotta);
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 18px rgba(198, 82, 46, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn--terracotta:hover:not(:disabled) {
+  background: var(--color-terracotta-light);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 28px rgba(198, 82, 46, 0.48);
+}
+
+.btn--terracotta:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  transition-duration: 70ms;
+}
+
+/* -------------------------------------------------------------
+   5. OUTLINE: Fine editorial line
+   ------------------------------------------------------------- */
+.btn--outline {
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--color-navy);
+  border: 1.5px solid var(--color-divider-strong);
+  backdrop-filter: blur(8px);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--color-slate-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 26, 44, 0.08);
+}
+
+.btn--outline:active:not(:disabled) {
+  transform: translateY(1px);
+  transition-duration: 70ms;
+}
+
+/* -------------------------------------------------------------
+   6. GHOST
+   ------------------------------------------------------------- */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-navy);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: rgba(14, 26, 44, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn::before {
+    display: none !important;
+  }
+  .btn:hover:not(:disabled) {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,1148 @@
+Warning: truncated output (original token count: 8169)
+Total output lines: 1574
+
+/* ============================================================
+   INTERVIEWLY LANDING PAGE STYLES
+   Cinematic Titanium Aesthetic (Matching Reference Picture):
+   - Continuous diagonal silver light beam background
+   - Pure brilliant white headlines (#FFFFFF)
+   - Pure white capsule action buttons (#FFFFFF pill with #121418 text)
+   - Secondary liquid-glass capsule buttons with specular rim highlights
+   - 100% symmetric frosted dark glass cards across all sections
+   ============================================================ */
+
+.sen-page {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+/* ============================================================
+   1. SECTION 1: HERO
+   ============================================================ */
+.sen-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--header-height) + 24px);
+  padding-bottom: var(--space-4xl);
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Ambient glow background that shifts with active swatch */
+.sen-hero-ambient-glow {
+  position: absolute;
+  top: 40%;
+  right: 15%;
+  transform: translate(50%, -50%);
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(80px);
+  opacity: 0.85;
+  transition: background 0.8s var(--ease-sen);
+}
+
+/* Top Archival Telemetry Bar (Kyoto editorial style) */
+.sen-hero-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 3;
+}
+
+.sen-topbar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sen-meta-tag {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.sen-meta-sub {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-meta-coord {
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mono);
+}
+
+.sen-text-right {
+  text-align: right;
+}
+
+/* Main Hero Grid */
+.sen-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* Left: Sticky Typographic Layout */
+.sen-hero-typography {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 680px;
+}
+
+.sen-hero-headline-wrap {
+  position: relative;
+}
+
+.sen-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.sen-headline-amp {
+  font-style: italic;
+  font-weight: 300;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.55);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+  font-family: var(--font-sans);
+  margin-right: 6px;
+  display: inline;
+}
+
+/* Perspective Toggle (Liquid-Glass Pill) */
+.sen-perspective-toggle,
+.sen-knife-type-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  width: fit-content;
+  margin: var(--space-xs) 0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.sen-toggle-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s var(--ease-sen);
+  cursor: pointer;
+  text-align: left;
+}
+
+.sen-toggle-btn span:first-child {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sen-toggle-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+.sen-toggle-btn.is-active {
+  background: #FFFFFF;
+  color: #121418;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.sen-toggle-btn.is-active .sen-toggle-sub {
+  opacity: 0.85;
+}
+
+.sen-hero-description {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 580px;
+}
+
+/* Telemetry Specs Grid (Symmetric 4-box layout) */
+.sen-hero-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin: var(--space-xs) 0;
+}
+
+.sen-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sen-spec-label {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-spec-val {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+/* Hero CTA Actions */
+.sen-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+/* Trust Statement */
+.sen-trust-statement {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sen-trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.8);
+  flex-shrink: 0;
+}
+
+/* Right: Interview Console Visual */
+.sen-hero-visual-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+}
+
+.sen-hero-console-stage,
+.sen-hero-knife-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+/* Scroll Cue */
+.sen-scroll-cue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.sen-scroll-line {
+  width: 44px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.sen-scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
+  animation: scrollLineScan 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollLineScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+
+/* ============================================================
+   2. SECTION 2: EVIDENCE ([01] THROUGH [04])
+   ============================================================ */
+.sen-evidence {
+  padding: var(--space-5xl) 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.sen-evidence-header {
+  margin-bottom: var(--space-2xl);
+  max-width: 820px;
+}
+
+/* Stepper Indicator Navigation */
+.sen-evidence-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.sen-evidence-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-sen);
+  text-align: left;
+  position: relative;
+}
+
+.sen-nav-num {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-nav-title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sen-nav-line {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FFFFFF;
+  transition: width 0.3s var(--ease-sen);
+}
+
+.sen-evidence-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sen-evidence-nav-btn.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.sen-evidence-nav-btn.is-active .sen-nav-num {
+  color: #FFFFFF;
+}
+
+.sen-evidence-nav-btn.is-active .sen-nav-title {
+  color: #FFFFFF;
+}
+
+.sen-evidence-nav-btn.is-active .sen-nav-line {
+  width: 100%;
+}
+
+/* Deep Scroll Attribute Stage */
+.sen-evidence-stage {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+/* Left Narrative Card */
+.sen-evidence-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+}
+
+.sen-evidence-tag {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+.sen-evidence-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.sen-evidence-sub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.sen-evidence-body {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* Specs Grid */
+.sen-evidence-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: var(--space-xs);
+}
+
+.sen-spec-card {
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sen-spec-card-label {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-spec-card-val {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+/* Pagination Controls */
+.sen-evidence-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: var(--space-sm);
+}
+
+.sen-step-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.25s var(--ease-sen);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.sen-step-btn:not(:disabled):hover {
+  background: #FFFFFF;
+  color: #121418;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sen-step-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Right: Visual Col & Macro Card */
+.sen-evidence-visual-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sen-evidence-macro-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.macro-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.macro-badge {
+  font-family: var(--fon…2169 tokens truncated…ox-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.sen-swatch-btn.is-active .sen-swatch-label {
+  color: #FFFFFF;
+}
+
+.sen-variant-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sen-variant-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+}
+
+.sen-meta-k {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sen-meta-v {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.sen-stock-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #34D399;
+}
+
+.sen-stock-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 6px #34D399;
+}
+
+.sen-variant-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--space-xs);
+}
+
+.sen-btn-primary--full {
+  width: 100%;
+}
+
+.sen-variant-guarantee {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   4. SECTION 4: AUDIENCES (Symmetric Dual Cards)
+   ============================================================ */
+.sen-audiences-section,
+.sen-philosophy {
+  padding: var(--space-5xl) 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.sen-audiences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3xl);
+  align-items: stretch;
+}
+
+.sen-audience-card {
+  padding: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: all 0.3s var(--ease-sen);
+}
+
+.sen-audience-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-card-border-hover);
+}
+
+.sen-audience-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sen-audience-tagline {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-audience-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.sen-audience-lead {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sen-audience-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.sen-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.sen-feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.sen-quote-block {
+  padding: var(--space-md) var(--space-lg);
+  border-left: 2px solid #FFFFFF;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: auto;
+}
+
+.sen-quote-block blockquote {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #FFFFFF;
+  font-style: italic;
+}
+
+.sen-quote-block cite {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 8px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+.sen-audience-btn-wrap {
+  margin-top: var(--space-sm);
+}
+
+/* ============================================================
+   5. SECTION 5: METHODOLOGY (Four Symmetric Step Cards)
+   ============================================================ */
+.sen-specifications {
+  padding: var(--space-5xl) 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.sen-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.sen-step-column-card {
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s var(--ease-sen);
+}
+
+.sen-step-column-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-card-border-hover);
+}
+
+.sen-step-num-badge {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: fit-content;
+  transition: all 0.25s var(--ease-sen);
+}
+
+.sen-step-column-card:hover .sen-step-num-badge {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.sen-step-column-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.sen-step-column-card p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================================
+   6. SECTION 6: BENEFITS (Two Symmetric Columns)
+   ============================================================ */
+.sen-benefits-section {
+  padding: var(--space-5xl) 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.sen-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3xl);
+  margin-top: var(--space-2xl);
+}
+
+.sen-benefit-col {
+  padding: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: all 0.3s var(--ease-sen);
+}
+
+.sen-benefit-col:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-card-border-hover);
+}
+
+.sen-benefit-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sen-benefit-pill {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-benefit-col h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.sen-benefit-sub {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -6px;
+}
+
+.sen-benefit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.sen-benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sen-check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.2);
+  color: #34D399;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ============================================================
+   7. SECTION 7: CLOSING CALL TO ACTION
+   ============================================================ */
+.sen-closing-cta {
+  padding: var(--space-5xl) 0 var(--space-4xl);
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sen-closing-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 64px 48px;
+  border-radius: 28px;
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sen-closing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   CANDIDATE DOSSIER MODAL
+   ============================================================ */
+.sen-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.sen-modal-card {
+  width: 100%;
+  max-width: 580px;
+  background: rgba(28, 32, 42, 0.95);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.sen-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sen-modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 6px;
+}
+
+.sen-modal-subline {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sen-modal-close-btn {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.sen-modal-close-btn:hover {
+  color: #FFFFFF;
+}
+
+.sen-modal-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.sen-modal-spec-box {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sen-modal-spec-k {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sen-modal-spec-v {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.sen-modal-body p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sen-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sen-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.sen-modal-form input {
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+}
+
+.sen-modal-form input:focus {
+  outline: none;
+  border-color: #FFFFFF;
+}
+
+.sen-modal-booked {
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.sen-modal-booked h4 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #FFFFFF;
+}
+
+.sen-modal-booked p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUTS
+   ============================================================ */
+@media (max-width: 1080px) {
+  .sen-hero-grid,
+  .sen-evidence-stage,
+  .sen-variants-stage,
+  .sen-audiences-grid,
+  .sen-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .sen-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sen-hero-visual-col {
+    order: -1;
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sen-hero-topbar {
+    display: none;
+  }
+
+  .sen-hero-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sen-hero-headline {
+    font-size: 2.6rem;
+  }
+
+  .sen-evidence-nav {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .sen-evidence-specs-grid,
+  .sen-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sen-audience-card,
+  .sen-benefit-col,
+  .sen-evidence-narrative,
+  .sen-evidence-macro-card,
+  .sen-stream-preview-card,
+  .sen-swatches-card {
+    padding: 28px 20px;
+  }
+}

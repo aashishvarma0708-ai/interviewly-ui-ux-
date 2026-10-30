@@ -1,0 +1,107 @@
+/* ============================================================
+   Interviewly Login Styles
+   Cinematic Titanium Aesthetic (Matching Reference Picture)
+   ============================================================ */
+
+.sen-login-page {
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 50px);
+  padding-bottom: var(--space-4xl);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sen-login-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.sen-login-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 540px;
+}
+
+.sen-login-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+}
+
+.sen-login-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sen-login-deco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--space-md);
+}
+
+.sen-deco-line {
+  width: 60px;
+  height: 2px;
+  background: #FFFFFF;
+}
+
+.sen-deco-meta {
+  display: flex;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+.sen-forgot-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sen-forgot-trigger {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.sen-forgot-trigger:hover {
+  color: #FFFFFF;
+}
+
+.sen-forgot-box {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 960px) {
+  .sen-login-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
