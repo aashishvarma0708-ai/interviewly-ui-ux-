@@ -15,7 +15,7 @@ Interviewly explores how a technical hiring platform could help candidates and e
 
 ## Design direction
 
-The visual system adapts cinematic product storytelling and tactile, cursor-aware interactions to the interview-platform concept. The direction draws on the supplied references, including [Sen Knife](https://sen-knife.com/2.0/knife/) and [Spyker Cars](https://spykercars.com/), while using original Interviewly content and interface code.
+The Interviewly visual system was designed and implemented from scratch for this concept. Its graphite-and-titanium palette, editorial typography, glass-like panels, technical dossier motifs, and cursor-aware motion work together as one cohesive identity.
 
 - **Palette:** graphite, titanium, slate, silver, and restrained orange accents.
 - **Typography:** English-language interface copy, using Outfit, Plus Jakarta Sans, and Inter.
@@ -106,9 +106,8 @@ The `public/_redirects` file routes page requests to `index.html` so React Route
 
 ## Credits
 
-**Concept and interface:** Interviewly UI/UX showcase  
-**Design references:** [Sen Knife](https://sen-knife.com/2.0/knife/) and [Spyker Cars](https://spykercars.com/)  
-**Built with:** React, Vite, React Router, and CSS
+**Concept, visual design, and interface implementation:** Interviewly UI/UX showcase  
+**Built from scratch with:** React, Vite, React Router, and CSS
 
 ---
 
